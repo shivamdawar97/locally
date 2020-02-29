@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dashboard_bg"
+    tools:context=".dashboard.DashboardActivity">
+
+
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/colorPrimary"
+        >
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/icon_menu"
+            android:tint="@android:color/white"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Locally"
+            android:textColor="@android:color/white"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:textSize="22sp"
+            />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_search"
+            android:tint="@android:color/white"
+            android:layout_gravity="center"
+            android:padding="10dp"
+            />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_favorite"
+            android:tint="@android:color/white"
+            android:layout_gravity="center"
+            android:padding="10dp"
+            />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_notifications"
+            android:tint="@android:color/white"
+            android:layout_gravity="center"
+            android:padding="10dp"
+            />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_shopping_cart"
+            android:tint="@android:color/white"
+            android:padding="10dp"
+            android:layout_gravity="center"
+            />
+
+    </LinearLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/category_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                />
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp">
+
+                <com.example.locoly.customView.AutoScrollViewPager
+                    android:id="@+id/shops_pager"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:layout_marginTop="5dp"/>
+
+                <com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
+                    android:id="@+id/view_pager_dots"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center"
+                    app:dotsColor="@android:color/white"
+                    app:dotsCornerRadius="8dp"
+                    app:dotsSize="10dp"
+                    app:dotsSpacing="4dp"
+                    app:dotsWidthFactor="2.5"
+                    app:selectedDotColor="@android:color/white"
+                    app:progressMode="true"
+                    android:layout_gravity="bottom|center"/>
+            </FrameLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#E9E6E6"
+                android:layout_marginTop="5dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Discover Local Stores"
+                    android:textSize="18sp"
+                    android:padding="5dp"
+                    android:layout_gravity="center"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_marginEnd="10dp"
+                    />
+
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    app:lottie_rawRes="@raw/right_arrow_anim"
+                    app:lottie_autoPlay="true"
+                    app:lottie_loop="true"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginStart="5dp"
+                    android:scaleX="1.5"
+                    android:scaleY="1.5"
+                    android:paddingTop="5dp"
+                    />
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="5dp"
+                >
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/inside_store"
+                android:scaleType="fitXY"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="Krishna Selection"
+                android:textStyle="bold"
+                android:textSize="32sp"
+                android:background="#66666666"
+                android:textColor="@android:color/white"
+                android:padding="5dp"/>
+
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="5dp"
+                >
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/inside_store2"
+                android:scaleType="fitXY"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="Professional Outfits"
+                android:textStyle="bold"
+                android:textSize="32sp"
+                android:background="#66666666"
+                android:textColor="@android:color/white"
+                android:padding="5dp"/>
+
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Shop by products"
+                android:textSize="18sp"
+                android:padding="5dp"
+                android:layout_gravity="center"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginTop="5dp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Jeans and Trousers"
+                android:padding="6dp"
+                android:textSize="16sp"
+                android:drawableEnd="@drawable/ic_chevron_right"
+                android:layout_gravity="center"
+                android:textColor="@android:color/white"
+                android:background="@android:color/holo_blue_light"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Footwear"
+                android:padding="6dp"
+                android:textSize="16sp"
+                android:drawableEnd="@drawable/ic_chevron_right"
+                android:layout_gravity="center"
+                android:textColor="@android:color/white"
+                android:background="@android:color/holo_blue_light"
+                />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="T-Shirts"
+                android:padding="6dp"
+                android:textSize="16sp"
+                android:drawableEnd="@drawable/ic_chevron_right"
+                android:layout_gravity="center"
+                android:textColor="@android:color/white"
+                android:background="@android:color/holo_blue_light"
+                />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Suits and Kurtas"
+                android:padding="6dp"
+                android:layout_gravity="center"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:drawableEnd="@drawable/ic_chevron_right"
+                android:background="@android:color/holo_blue_light"
+                />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Spring wear"
+                android:padding="6dp"
+                android:layout_gravity="center"
+                android:textColor="@android:color/white"
+                android:background="@android:color/holo_blue_light"
+                android:textSize="16sp"
+                android:drawableEnd="@drawable/ic_chevron_right"
+                />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Bags, Belts and more"
+                android:padding="6dp"
+                android:layout_gravity="center"
+                android:textSize="16sp"
+                android:drawableEnd="@drawable/ic_chevron_right"
+                android:textColor="@android:color/white"
+                android:background="@android:color/holo_blue_light"
+                />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"
+                />
+
+
+            <com.example.locoly.customView.ProductOfTopRatedStores
+                android:id="@+id/products_top_stores"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
